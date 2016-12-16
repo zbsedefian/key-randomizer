@@ -87,8 +87,8 @@
     </div>
 
     <div class="buttons">
-        <input type="text" id="time" value="6000">
-        <label class="label">ms</label><br>
+        <input type="text" id="time" value="10">
+        <label class="label">s</label><br>
         <button id='setTime'>s e t // t i m e</button>
     </div>
     
@@ -106,8 +106,8 @@
     var time;
     $('#setTime').click(function(){
         clearInterval(timer);
-        time = $('#time').val();
-        $('.buttons').append("<p class='message'>Interval has been set to " + time + "ms.</p>");
+        time = $('#time').val() * 1000;
+        $('.buttons').append("<p class='message'>Interval has been set to " + time / 1000 + " seconds.</p>");
         $('.message').fadeOut(2000);
         timer = setInterval(function(){
             currentIndex = (currentIndex + Math.floor(Math.random() * 12)) % totalDiv;
