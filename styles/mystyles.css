@@ -36,19 +36,22 @@ body, html{
 }
 
 .label{
-    margin-top: 50px;
+    margin-left: -10px;
+}
+
+#beep{
+    margin: 10px;
 }
 
 #time{
     font-family: 'Space Mono', monospace, Helvetica;
-    width: 35px;
+    width: 25px;
     font-size: 16px;
 }
 
 #setTime{
     font-family: 'Space Mono', monospace, Helvetica;
     color: red;
-    margin-top: 5px;
 }
 
 /***********************/

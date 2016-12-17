@@ -89,8 +89,16 @@
     <div class="buttons">
         <input type="text" id="time" value="10">
         <label class="label">s</label><br>
+        <input type="checkbox" name="options" value="beep" id="beep"><label class="option-label" for="beep">Beep</label><br>
         <button id='setTime'>s e t // t i m e</button>
+<!--/
+        <input type="checkbox" name="options" value="key-beep" id="key-beep"><label>Key-beep</label>
+        <input type="checkbox" name="options" value="key-say" id="key-say"><label>Key-say</label>
+-->
+        <br>
     </div>
+    
+    <audio class="beep-sound" src="media/noise.wav"></audio>
     
 </div>
 </body>
@@ -113,6 +121,9 @@
             currentIndex = (currentIndex + Math.floor(Math.random() * 12)) % totalDiv;
             $(".box").hide();
             $(".box").eq(currentIndex).show();
+            if($('#beep').is(":checked")) {
+                $(".beep-sound")[0].play();
+            }       
         },time);
     });
 </script>
