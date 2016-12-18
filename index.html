@@ -38,64 +38,133 @@
     <h3>Practice every key in the circle of fifths</h3>
     </header>
     
-    <div id="C" class="box">
-    <p class="key-name">C</p>
+    <div class="main">
+        
+    <!--    STRING NUMBER -->
+        
+        <div class="string-main">
+            
+            <h3 class="main-label string-label clearfix hide">String</h3>
+        
+            <div id="first" class="string ">
+            <p class="string-name">1</p>
+            </div>
+
+            <div id="second" class="string">
+            <p class="string-name">2</p>
+            </div>
+
+            <div id="third" class="string">
+            <p class="string-name">3</p>
+            </div>
+
+            <div id="fourth" class="string">
+            <p class="string-name">4</p>
+            </div>
+
+            <div id="fifth" class="string">
+            <p class="string-name">5</p>
+            </div>
+
+            <div id="sixth" class="string">
+            <p class="string-name">6</p>
+            </div>
+            
+        </div>
+
+    <!--    KEY   -->
+        
+        <div class="key-main clearfix">
+
+            <h3 class="main-label">Key</h3>
+            
+            <div id="C" class="key">
+            <p class="key-name">C</p>
+            </div>
+
+            <div id="F" class="key">
+            <p class="key-name">F</p>
+            </div>
+
+            <div id="Bb" class="key">
+            <p class="key-name">Bb</p>
+            </div>
+
+            <div id="Eb" class="key">
+            <p class="key-name">Eb</p>
+            </div>
+
+            <div id="Ab" class="key">
+            <p class="key-name">Ab</p>
+            </div>
+
+            <div id="Db" class="key">
+            <p class="key-name">Db/C#</p>
+            </div>
+
+            <div id="Gb" class="key">
+            <p class="key-name">Gb/F#</p>
+            </div>
+
+            <div id="B" class="key">
+            <p class="key-name">Cb/B</p>
+            </div>
+
+            <div id="E" class="key">
+            <p class="key-name">E</p>
+            </div>
+
+            <div id="A" class="key">
+            <p class="key-name">A</p>
+            </div>
+
+            <div id="D" class="key">
+            <p class="key-name">D</p>
+            </div>
+
+            <div id="G" class="key">
+            <p class="key-name">G</p>
+            </div>
+            
+        </div>
+        
+<!--        CHORD   -->
+        <div class="chord-main">
+
+            <h3 class="main-label chord-label clearfix hide">Chord</h3>
+
+            <div id="maj7" class="chord">
+            <p class="chord-name">maj7</p>
+            </div>
+
+            <div id="dom7" class="chord">
+            <p class="chord-name">dom7</p>
+            </div>
+
+            <div id="min7" class="chord">
+            <p class="chord-name">min7</p>
+            </div>
+
+            <div id="min7b5" class="chord">
+            <p class="chord-name">min7b5</p>
+            </div>
+
+            <div id="dim7" class="chord">
+            <p class="chord-name">dim7</p>
+            </div>
+            
+        </div>
+        
     </div>
 
-    <div id="F" class="box">
-    <p class="key-name">F</p>
-    </div>
-
-    <div id="Bb" class="box">
-    <p class="key-name">Bb</p>
-    </div>
-
-    <div id="Eb" class="box">
-    <p class="key-name">Eb</p>
-    </div>
-
-    <div id="Ab" class="box">
-    <p class="key-name">Ab</p>
-    </div>
-
-    <div id="Db" class="box">
-    <p class="key-name">Db/C#</p>
-    </div>
-
-    <div id="Gb" class="box">
-    <p class="key-name">Gb/F#</p>
-    </div>
-
-    <div id="B" class="box">
-    <p class="key-name">Cb/B</p>
-    </div>
-
-    <div id="E" class="box">
-    <p class="key-name">E</p>
-    </div>
-
-    <div id="A" class="box">
-    <p class="key-name">A</p>
-    </div>
-
-    <div id="D" class="box">
-    <p class="key-name">D</p>
-    </div>
-
-    <div id="G" class="box">
-    <p class="key-name">G</p>
-    </div>
-
-    <div class="buttons">
+    <div class="settings">
         <input type="text" id="time" value="10">
         <label class="label">s</label><br>
-        <input type="checkbox" name="options" value="beep" id="beep"><label class="option-label" for="beep">Beep</label><br>
-        <button id='setTime'>s e t // t i m e</button>
-<!--/
-        <input type="checkbox" name="options" value="key-beep" id="key-beep"><label>Key-beep</label>
-        <input type="checkbox" name="options" value="key-say" id="key-say"><label>Key-say</label>
--->
-        <br>
+        <input type="checkbox" name="options" value="beep" id="beep"><label class="option-label" for="beep">Beep</label>
+        <input type="checkbox" name="options" value="show-string" id="show-string"><label class="option-label" for="show-string">Show string</label>
+        <input type="checkbox" name="options" value="show-chord" id="show-chord"><label class="option-label" for="show-chord">Show chord</label><br>
+        <button class='button' id='setTime'>s e t // t i m e</button><br>
+        <button class='button' id='stopTime'>stop</button>
     </div>
     
     <audio class="beep-sound" src="media/noise.wav"></audio>
@@ -106,25 +175,5 @@
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
-<script>
-    var currentIndex = 0;
-    $(".box:not(:eq("+ currentIndex +"))").hide();
-    var totalDiv = $(".box").length;
-    var timer;
-    var time;
-    $('#setTime').click(function(){
-        clearInterval(timer);
-        time = $('#time').val() * 1000;
-        $('.buttons').append("<p class='message'>Interval has been set to " + time / 1000 + " seconds.</p>");
-        $('.message').fadeOut(2000);
-        timer = setInterval(function(){
-            currentIndex = (currentIndex + Math.floor(Math.random() * 12)) % totalDiv;
-            $(".box").hide();
-            $(".box").eq(currentIndex).show();
-            if($('#beep').is(":checked")) {
-                $(".beep-sound")[0].play();
-            }       
-        },time);
-    });
-</script>
+<script src="jscripts/app.js"></script>
 </html>
