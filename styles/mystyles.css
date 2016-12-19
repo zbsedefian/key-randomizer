@@ -20,7 +20,6 @@ body, html{
     height: 0;
 }
 
-
 /***********************/
 /* CONTENT / MAIN SECTION */
 /***********************/
@@ -49,12 +48,15 @@ body, html{
 }
 
 .chord-main{
-    top: 400px;
+    top: 450px;
 }
-
 
 .key-name, .string-name, .chord-name, .fingering-name{
     text-shadow: 0px 4px 1px #bbb;
+}
+
+#min7b5{
+    font-size: 2.5em;
 }
 
 /*  about  */
@@ -128,6 +130,13 @@ body, html{
     float: right;
 }
 
+.hide{
+    display: none;
+}
+
+.string-options{
+    display: none;
+}
 /***********************/
 /* INPUT / BUTTON AREA */
 /***********************/
@@ -171,16 +180,20 @@ body, html{
     text-align: center;
     margin-bottom: 40px;
     text-shadow: 0 1px white;
+    background: #ddd;
+    padding: 20px;
 }
 
 h3{
-    color: #ddd;
+    color: #fff;
     text-shadow: 0px 1px black;
 }
 
 /***********************/
 /* MEDIA QUERIES */
 /***********************/
+
+/* Make main part smaller in mobile view*/
 
 @media only screen and (max-width: 400px) {
     .key {
@@ -198,4 +211,32 @@ h3{
         height: 100px;
         font-size: 2em;
     }
+    
+    #min7b5{
+        font-size: 1.7em;
+    }
+}
+
+/* Arranging options */
+
+@media only screen and (min-width: 800px){
+    .string-main{
+        left: 10em;
+    }
+
+    .chord-main, .fingering-main{
+        right: 10em;
+    }
+
+}
+
+@media only screen and (min-width: 1000px){
+    .string-main{
+        left: 17em;
+    }
+
+    .chord-main, .fingering-main{
+        right: 17em;
+    }
+
 }

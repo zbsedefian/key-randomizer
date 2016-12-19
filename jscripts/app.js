@@ -43,7 +43,6 @@ $('#setTime').click(function(){
     $('.message').fadeOut(2000);
 //setting interval for all
     timer = setInterval(function(){
-    
 //key alternator
         currentIndexKey = (currentIndexKey + Math.floor(Math.random() * 12)) % totalDivKey;
         $(".key").hide();
@@ -55,7 +54,7 @@ $('#setTime').click(function(){
         
         if($('#show-string').is(":checked")){
             $('.string-label').show();
-            currentIndexString = (currentIndexString + Math.floor(Math.random() * 12)) % totalDivString;
+            
             $(".string").hide();
             $(".string").eq(currentIndexString).show();
         }
@@ -73,19 +72,21 @@ $('#setTime').click(function(){
             $(".fingering").hide();
             $(".fingering").eq(currentIndexFingering).show();
         }
-        
     },time);
 });
 
 //listen for checkbox clicking
 $('input:checkbox').change(
     function(){
+//showing various circles
         if ($('#show-string').is(':checked')) {
             $(".string-main").fadeIn(500);
             $('.string-label').fadeIn(500);
             $(".string").eq(currentIndexString).fadeIn(500);
+            $('.string-options').fadeIn(500);
         } else {
             $(".string-main").fadeOut(700);
+            $('.string-options').fadeOut(700);
         }
 
         if($('#show-chord').is(":checked")){
@@ -103,6 +104,67 @@ $('input:checkbox').change(
         } else {
             $(".fingering-main").fadeOut(700);
         }
+        
+//choosing which guitar strings to show
+        var $first = $('#first').get();
+        var $second = $('#second').get();
+        var $third = $('#third').get();
+        var $fourth = $('#fourth').get();
+        var $fifth = $('#fifth').get();
+        var $sixth = $('#sixth').get();
+        
+        if ($('#one-string').is(':checked')){
+            $('.string-main').add($first);
+
+        } else {
+            currentIndexString = (currentIndexString + Math.floor(Math.random() * 12)) % totalDivString;
+            $('#first').remove();
+        }
+        
+        if ($('#two-string').is(':checked')){
+            $("#second").removeClass('hide');
+            $("#second").addClass('string');
+        } else {
+            $("#second").removeClass('string');
+            $("#second").addClass('hide');
+        }
+        
+        if ($('#three-string').is(':checked')){
+            $("#third").removeClass('hide');
+            $("#third").addClass('string');
+        } else {
+            $("#third").removeClass('string');
+            $("#third").addClass('hide');
+        }
+        
+         if ($('#four-string').is(':checked')){
+            $("#fourth").removeClass('hide');
+            $("#fourth").addClass('string');
+        } else {
+            $("#fourth").removeClass('string');
+            $("#fourth").addClass('hide');
+        }
+        
+        if ($('#five-string').is(':checked')){
+            $("#fifth").removeClass('hide');
+            $("#fifth").addClass('string');
+        } else {
+            $("#fifth").removeClass('string');
+            $("#fifth").addClass('hide');
+        }
+        
+        if ($('#six-string').is(':checked')){
+            $("#sixth").removeClass('hide');
+            $("#sixth").addClass('string');
+            currentIndexString = (currentIndexString + Math.floor(Math.random() * 12)) % totalDivString;
+            $(".string").hide();
+            $(".string").eq(currentIndexString).show();
+        } else {
+            $("#sixth").removeClass('string');
+            $("#sixth").addClass('hide');
+            currentIndexString = (currentIndexString + Math.floor(Math.random() * 12)) % totalDivString;
+        }
+        
 });
 
 //if stop is clicked
@@ -111,6 +173,22 @@ $('#stopTime').click(function(){clearInterval(timer)});
 //if What is this? is clicked
 $('#about-text').click(function(){$('.about-message').show()});
 
-
 //if Okay. is clicked
 $('#okay').click(function(){$('.about-message').hide()});
+
+function calculateTotalOf(option){
+    switch(option){
+        case 'key':
+            //add later
+            break;
+        case 'string':
+            totalDivString = $(".string").length;
+            currentIndexString = (currentIndexString + Math.floor(Math.random() * 12)) % totalDivString;
+            break;
+        case 'chord':
+            //add later
+            break;
+        default:
+            console.log('This is not an option.');
+    }
+}
