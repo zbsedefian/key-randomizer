@@ -169,7 +169,10 @@ function whichStrings(){
 $('#stopTime').click(function(){clearInterval(timer)});
 
 //if What is this? is clicked
-$('#about-text').click(function(){$('.about-message').show()});
+//$('#about-text').click(function(){$('.about-message').show()});
+$('#about-text').click(function(){
+    $('.pop-up').fadeIn(100);
+});
 
 //if Okay. is clicked
-$('#okay').click(function(){$('.about-message').hide()});
+$('#okay').click(function(){$('.pop-up').hide();});

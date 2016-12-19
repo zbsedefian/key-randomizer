@@ -40,11 +40,31 @@
     
     <div class="main">
         
+    <div class='pop-up'>
+        <div class='red-x' id="okay"><span class="the-x">X</span></div>
+        <p class='about-paragraph top-p head-p'>
+            Welcome.
+        </p>
+        
+        <p class='about-paragraph'>
+            This program helps the user test themselves on guitar fretboard knowledge. The user is prompted with a random note that will generate at the set interval. To increase difficulty one can add string number, chord (arpeggio), and fingering. 
+        </p>
+        
+        <p class='about-paragraph'>
+            This tool can be used for any instrument or genre, but I built it to test myself on jazz guitar arpeggios.
+        </p>
+        
+        <p class='about-paragraph'>
+            Contact me with comments or requests at <a href="mailto:me@zacharysedefian.com" >me@zacharysedefian.com</a>.
+        </p>
+<!--        <div class="center"><button class='button' id='okay'>Okay.</button></div>-->
+    </div>
+        
     <!--    STRING NUMBER -->
         
         <div class="string-main">
             
-            <h3 class="main-label string-label clearfix hide">String</h3>
+            <h3 class="main-label string-label clearfix hide"></h3>
         
             <div id="first" class="string">
             <p class="string-name">1</p>
@@ -76,7 +96,7 @@
         
         <div class="key-main clearfix">
 
-            <h3 class="main-label">Key</h3>
+            <h3 class="main-label"></h3>
             
             <div id="C" class="key">
             <p class="key-name">C</p>
@@ -131,7 +151,7 @@
 <!--        CHORD   -->
         <div class="chord-main">
 
-            <h3 class="main-label chord-label clearfix hide">Chord</h3>
+            <h3 class="main-label chord-label clearfix hide"></h3>
 
             <div id="maj7" class="chord">
             <p class="chord-name">maj7</p>
@@ -158,7 +178,7 @@
 <!--    FINGERING    -->
         <div class="fingering-main">
 
-            <h3 class="main-label fingering-label clearfix hide">Fingering</h3>
+            <h3 class="main-label fingering-label clearfix hide"></h3>
 
             <div id="211" class="fingering">
             <p class="fingering-name">2-1-1</p>
@@ -177,13 +197,11 @@
     </div>
 
     <div class="settings">
-        <input type="text" id="time" value="10">
-        <label class="label">s</label><br>
-        <input type="checkbox" name="options" value="beep" id="beep"><label class="option-label" for="beep">Beep</label>
-        <input type="checkbox" name="options" value="show-string" id="show-string"><label class="option-label" for="show-string">Show string</label><br>
+        
+        <input type="checkbox" name="options" value="beep" id="beep"><label class="option-label" id="beep" for="beep">Beep</label>
+        <input type="checkbox" name="options" value="show-string" id="show-string"><label class="option-label" id="label-show-string" for="show-string">Show string</label>
         <input type="checkbox" name="options" value="show-chord" id="show-chord"><label class="option-label" for="show-chord">Show chord</label>
-        <input type="checkbox" name="options" value="show-fingering" id="show-fingering"><label class="option-label" for="show-fingering">Show fingering</label><br>
-        <br>
+        <input type="checkbox" name="options" value="show-fingering" id="show-fingering"><label class="option-label" for="show-fingering">Show fingering</label>
         <p class="string-options">
             Which strings do you want to practice?<br>
             <input type="checkbox" name="one-string" id="one-string" checked>
@@ -199,25 +217,16 @@
             <input type="checkbox" name="six-string" id="six-string" checked>
             <label for="six-string">6</label>
         </p>
+        <br>
         
-        <button class='button' id='setTime'>s e t // t i m e</button><br>
-        <button class='button' id='stopTime'>stop</button>
+        <input type="text" id="time" value="10">
+        <label class="label">s</label>
+        <button class='button' id='setTime'>s e t _ t i m e</button>
+        <button class='button' id='stopTime'>s t o p</button>
     </div>
     
     <div class="about">
         <p id="about-text">What is this?</p>
-        <div class='about-message'>
-            <p class='about-paragraph'>
-                I wrote this program to help familiarize myself with a guitar fretboard through jazz. If ignoring the string and fingering options, it presumably can be used for any instrument or genre. 
-            </p>
-            
-            <p class='about-paragraph'>
-                Contact me with comments or requests at me@zacharysedefian.com.
-            </p>
-            
-            <button class='button' id='okay'>Okay.</button>
-
-        </div>
     </div>
     
     <audio class="beep-sound" src="media/noise.wav"></audio>

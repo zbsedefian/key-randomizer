@@ -48,7 +48,7 @@ body, html{
 }
 
 .chord-main{
-    top: 450px;
+    top: 375px;
 }
 
 .key-name, .string-name, .chord-name, .fingering-name{
@@ -62,7 +62,6 @@ body, html{
 /*  about  */
 
 .about{
-    margin-top: 15px;
     text-align: center;
 }
 
@@ -70,20 +69,52 @@ body, html{
     text-decoration: none;
     color: white;
     font-size: 14px;
-    padding: 20px;
 }
 
 .about-paragraph{
     text-align: left;
-    margin: 0 4em;
+    margin: 6px;
 }
 
-.about-message{
+.top-p{
+    font-weight: 800;
+}
+
+.center{
+    text-align: center;
+}
+
+.pop-up{
     display: none;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 2;
+    width: 300px;
+    height: 300px;
+    background-color: #eee;
+    font-size: 14px;
+    border: solid 2px #555;
+    border-top: solid 10px;
+    border-radius: 1%;
+    border-bottom-right-radius: 5%;
+    border-bottom-left-radius: 5%;
 }
 
-#okay{
-    margin-top: 15px;
+.red-x{
+    float:right;
+    width: 20px;
+    height: 20px;
+    padding-left: 1px;
+    padding-bottom: 1px;
+    color: white;
+    background-color: red;
+    border: solid 1px black;
+}
+
+.the-x{
+    margin-left: 5px;
+    font-size: 16px;
 }
 
 /***********************/
@@ -136,13 +167,15 @@ body, html{
 
 .string-options{
     display: none;
+    margin: 0;
+    margin-top: 5px;
 }
 /***********************/
 /* INPUT / BUTTON AREA */
 /***********************/
 
 .settings{
-    margin-top: 15px;
+    margin-top: 20px;
     text-align: center;
 }
 
@@ -180,7 +213,7 @@ body, html{
     text-align: center;
     text-shadow: 0 1px white;
     background: #ddd;
-    padding: 20px;
+    padding: 1px;
 }
 
 h3{
@@ -201,10 +234,6 @@ h3{
         font-size: 4.8em;
     }
     
-    .string-main, .chord-main, .fingering-main{
-        margin-top: -50px;
-    }
-    
     .string, .chord, .fingering{
         width: 100px;
         height: 100px;
@@ -214,6 +243,15 @@ h3{
     #min7b5{
         font-size: 1.7em;
     }
+    
+    .chord-main{
+        top: 300px;
+    }
+        
+    .settings{
+        margin-top: 70px;
+    }
+    
 }
 
 /* Arranging options */
@@ -226,6 +264,7 @@ h3{
     .chord-main, .fingering-main{
         right: 10em;
     }
+
 
 }
 
