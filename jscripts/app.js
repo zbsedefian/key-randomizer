@@ -35,6 +35,7 @@ $('#211').hide();
 
 //when set time is clicked, starts and restarts interval
 $('#setTime').click(function(){
+//    whichStrings();
     clearInterval(timer);
 //convert s to ms
     time = $('#time').val() * 1000;
@@ -54,7 +55,8 @@ $('#setTime').click(function(){
         
         if($('#show-string').is(":checked")){
             $('.string-label').show();
-            
+            totalDivString = $(".string").length;
+            currentIndexString = (currentIndexString + Math.floor(Math.random() * 12)) % totalDivString;
             $(".string").hide();
             $(".string").eq(currentIndexString).show();
         }
@@ -104,68 +106,64 @@ $('input:checkbox').change(
         } else {
             $(".fingering-main").fadeOut(700);
         }
-        
+});
+
+function whichStrings(){
 //choosing which guitar strings to show
-        var $first = $('#first').get();
-        var $second = $('#second').get();
+        var $first = '<div id="first" class="string"><p class="string-name">1</p></div>'
+        var $second = '<div id="second" class="string"><p class="string-name">2</p></div>'
         var $third = $('#third').get();
         var $fourth = $('#fourth').get();
         var $fifth = $('#fifth').get();
         var $sixth = $('#sixth').get();
         
-        if ($('#one-string').is(':checked')){
-            $('.string-main').add($first);
-
-        } else {
+        if ($('#one-string').is(':checked') && $("#second").css('display', 'none')  && $("#second").length){
+            currentIndexString = (currentIndexString + Math.floor(Math.random() * 12)) % totalDivString;
+            $('.string-main').append($first);
+            console.log('1 should be added');
+        } else if ($('#one-string').is(':not(:checked)')) {
             currentIndexString = (currentIndexString + Math.floor(Math.random() * 12)) % totalDivString;
             $('#first').remove();
+            console.log('1 should be removed');
         }
         
-        if ($('#two-string').is(':checked')){
-            $("#second").removeClass('hide');
-            $("#second").addClass('string');
-        } else {
-            $("#second").removeClass('string');
-            $("#second").addClass('hide');
+        if ($('#two-string').is(':checked') && $("#second").css('display', 'none') && $("#second").length){
+            $('.string-main').append($second);
+             console.log('2 should be added');
+        } else if($('#two-string').is(':not(:checked)')){
+            currentIndexString = (currentIndexString + Math.floor(Math.random() * 12)) % totalDivString;
+            $('#second').remove();
+            console.log('2 should be removed');
         }
         
         if ($('#three-string').is(':checked')){
-            $("#third").removeClass('hide');
-            $("#third").addClass('string');
+            $('.string-main').add($third);
         } else {
-            $("#third").removeClass('string');
-            $("#third").addClass('hide');
+            currentIndexString = (currentIndexString + Math.floor(Math.random() * 12)) % totalDivString;
+            $('#third').remove();
         }
         
          if ($('#four-string').is(':checked')){
-            $("#fourth").removeClass('hide');
-            $("#fourth").addClass('string');
+            $('.string-main').add($fourth);
         } else {
-            $("#fourth").removeClass('string');
-            $("#fourth").addClass('hide');
+            currentIndexString = (currentIndexString + Math.floor(Math.random() * 12)) % totalDivString;
+            $('#fourth').remove();
         }
         
         if ($('#five-string').is(':checked')){
-            $("#fifth").removeClass('hide');
-            $("#fifth").addClass('string');
+            $('.string-main').add($fifth);
         } else {
-            $("#fifth").removeClass('string');
-            $("#fifth").addClass('hide');
+            currentIndexString = (currentIndexString + Math.floor(Math.random() * 12)) % totalDivString;
+            $('#fifth').remove();
         }
         
         if ($('#six-string').is(':checked')){
-            $("#sixth").removeClass('hide');
-            $("#sixth").addClass('string');
-            currentIndexString = (currentIndexString + Math.floor(Math.random() * 12)) % totalDivString;
-            $(".string").hide();
-            $(".string").eq(currentIndexString).show();
+            $('.string-main').add($sixth);
         } else {
-            $("#sixth").removeClass('string');
-            $("#sixth").addClass('hide');
             currentIndexString = (currentIndexString + Math.floor(Math.random() * 12)) % totalDivString;
+            $('#sixth').remove();
         }
-        
-});
+}
 
 //if stop is clicked
 $('#stopTime').click(function(){clearInterval(timer)});
@@ -175,20 +173,3 @@ $('#about-text').click(function(){$('.about-message').show()});
 
 //if Okay. is clicked
 $('#okay').click(function(){$('.about-message').hide()});
-
-function calculateTotalOf(option){
-    switch(option){
-        case 'key':
-            //add later
-            break;
-        case 'string':
-            totalDivString = $(".string").length;
-            currentIndexString = (currentIndexString + Math.floor(Math.random() * 12)) % totalDivString;
-            break;
-        case 'chord':
-            //add later
-            break;
-        default:
-            console.log('This is not an option.');
-    }
-}
