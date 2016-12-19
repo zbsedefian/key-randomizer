@@ -107,7 +107,7 @@
             </div>
 
             <div id="B" class="key">
-            <p class="key-name">Cb/B</p>
+            <p class="key-name">B/Cb</p>
             </div>
 
             <div id="E" class="key">
@@ -155,16 +155,53 @@
             
         </div>
         
+<!--    FINGERING    -->
+        <div class="fingering-main">
+
+            <h3 class="main-label fingering-label clearfix hide">Fingering</h3>
+
+            <div id="211" class="fingering">
+            <p class="fingering-name">2-1-1</p>
+            </div>
+
+            <div id="121" class="fingering">
+            <p class="fingering-name">1-2-1</p>
+            </div>
+            
+            <div id="112" class="fingering">
+            <p class="fingering-name">1-1-2</p>
+            </div>
+            
+        </div>
+        
     </div>
 
     <div class="settings">
         <input type="text" id="time" value="10">
         <label class="label">s</label><br>
         <input type="checkbox" name="options" value="beep" id="beep"><label class="option-label" for="beep">Beep</label>
-        <input type="checkbox" name="options" value="show-string" id="show-string"><label class="option-label" for="show-string">Show string</label>
-        <input type="checkbox" name="options" value="show-chord" id="show-chord"><label class="option-label" for="show-chord">Show chord</label><br>
+        <input type="checkbox" name="options" value="show-string" id="show-string"><label class="option-label" for="show-string">Show string</label><br>
+        <input type="checkbox" name="options" value="show-chord" id="show-chord"><label class="option-label" for="show-chord">Show chord</label>
+        <input type="checkbox" name="options" value="show-fingering" id="show-fingering"><label class="option-label" for="show-fingering">Show fingering</label><br>
+        <br>
         <button class='button' id='setTime'>s e t // t i m e</button><br>
         <button class='button' id='stopTime'>stop</button>
+    </div>
+    
+    <div class="about">
+        <p id="about-text">What is this?</p>
+        <div class='about-message'>
+            <p class='about-paragraph'>
+                I wrote this program to help familiarize myself with a guitar fretboard through jazz. If ignoring the string and fingering options, it presumably can be used for any instrument or genre. 
+            </p>
+            
+            <p class='about-paragraph'>
+                Contact me with comments or requests at me@zacharysedefian.com.
+            </p>
+            
+            <button class='button' id='okay'>Okay.</button>
+
+        </div>
     </div>
     
     <audio class="beep-sound" src="media/noise.wav"></audio>
