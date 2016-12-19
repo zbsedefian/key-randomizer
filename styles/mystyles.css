@@ -254,9 +254,8 @@ h3{
         display: none;
     }
     
-    .setting-span{
-        display:block;
-        margin-bottom: 10px;
+    #blockify{
+        display: block;
     }
 }
 
