@@ -134,7 +134,7 @@ function calculateStringValues(){
 
 //chooses which guitar strings to show
 function whichStrings(){
-    if ($('#one-string').is(':checked')){
+    if ($('#one-string').is(':checked') && $('#first').length === 0 ){
         $('.string-main').append($first);
         calculateStringValues();
     } else if ($('#one-string').is(':not(:checked)')) {
@@ -142,7 +142,7 @@ function whichStrings(){
         calculateStringValues();
     }
 
-    if ($('#two-string').is(':checked')){
+    if ($('#two-string').is(':checked') && $('#second').length === 0 ){
         $('.string-main').append($second);
         calculateStringValues();
     } else if($('#two-string').is(':not(:checked)')){
@@ -150,7 +150,7 @@ function whichStrings(){
         calculateStringValues();
     }
 
-    if ($('#three-string').is(':checked')){
+    if ($('#three-string').is(':checked') && $('#third').length === 0 ){
         $('.string-main').append($third);
         calculateStringValues();
     } else if($('#three-string').is(':not(:checked)')){
@@ -158,7 +158,7 @@ function whichStrings(){
         calculateStringValues();
     }
 
-     if ($('#four-string').is(':checked')){
+     if ($('#four-string').is(':checked') && $('#fourth').length === 0 ){
         $('.string-main').append($fourth);
         calculateStringValues();
     } else if($('#four-string').is(':not(:checked)')){
@@ -166,7 +166,7 @@ function whichStrings(){
         calculateStringValues();
     }
 
-    if ($('#five-string').is(':checked')){
+    if ($('#five-string').is(':checked') && $('#fifth').length === 0 ){
         $('.string-main').append($fifth);
         calculateStringValues();
     } else if($('#five-string').is(':not(:checked)')){
@@ -174,7 +174,7 @@ function whichStrings(){
         calculateStringValues();
     }
 
-    if ($('#six-string').is(':checked')){
+    if ($('#six-string').is(':checked') && $('#sixth').length === 0 ){
         $('.string-main').append($sixth);
         calculateStringValues();
     } else if($('#six-string').is(':not(:checked)')){
