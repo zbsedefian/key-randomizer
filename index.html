@@ -2,11 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+    <meta name="keywords" content="music, keygen, random key, key, guitar practice, performance practice, instrument practice, notes, random note, jazz practice, jazz guitar">
+    <meta name="description" content="A tool for learning the notes of an instrument.">
     <meta name="author" content="Zachary Sedefian">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Key randomizer</title>
+    <title>Musicial Keygen</title>
     <link rel='shortcut icon' type='image/x-icon' href='media/favicon.ico' />
     <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
     <link rel="stylesheet" href="styles/normalize.css">
@@ -34,20 +34,24 @@
 <div class='container'>
 
     <header class="header">
-    <h1>Key Randomizer</h1>
+    <h1>Musical Keygen</h1>
     <h3>Practice every key in the circle of fifths</h3>
     </header>
     
     <div class="main">
         
     <div class='pop-up'>
-        <div class='red-x' id="okay"><span class="the-x">X</span></div>
+        <div class='red-x' id="red-x"><span class="the-x">X</span></div>
         <p class='about-paragraph top-p head-p'>
             Welcome.
         </p>
         
         <p class='about-paragraph'>
-            This program helps the user test themselves on guitar fretboard knowledge. The user is prompted with a random note that will generate at the set interval. To increase difficulty one can add string number, chord (arpeggio), and fingering. 
+            Familiarizing oneself with an instrument's note placement is important for any musician. This program allows the user to test their knowledge of the guitar fretboard. 
+        </p>
+        
+        <p class='about-paragraph'>
+            The user is prompted with a random note that will generate at the set interval. To increase recognition difficulty one can add string number, chord/arpeggio, and fingering. 
         </p>
         
         <p class='about-paragraph'>
@@ -64,6 +68,7 @@
         
         <div class="string-main">
             
+<!--
             <h3 class="main-label string-label clearfix hide"></h3>
         
             <div id="first" class="string">
@@ -90,13 +95,12 @@
             <p class="string-name">6</p>
             </div>
             
+-->
         </div>
 
     <!--    KEY   -->
         
         <div class="key-main clearfix">
-
-            <h3 class="main-label"></h3>
             
             <div id="C" class="key">
             <p class="key-name">C</p>
@@ -201,15 +205,15 @@
         <span class="setting-span" id='blockify'>
             <input type="checkbox" name="options" value="beep" id="beep"><label class="option-label" id="beep" for="beep">Beep</label>
         
-            <input type="checkbox" name="options" value="show-string" id="show-string"><label class="option-label" id="label-show-string" for="show-string">Show string</label>
+            <input type="checkbox" name="options" value="play-key" id="play-key"><label class="option-label" id="play-key-label" for="play-key">Play key</label>
         </span>
             
         <span class="setting-span">
-            <input type="checkbox" name="options" value="show-chord" id="show-chord"><label class="option-label" for="show-chord">Show chord</label>
-        </span>
+            <input type="checkbox" name="options" value="show-string" id="show-string"><label class="option-label" id="label-show-string" for="show-string">String</label>
+            
+            <input type="checkbox" name="options" value="show-chord" id="show-chord"><label class="option-label" for="show-chord">Chord</label>
           
-        <span class="setting-span">
-            <input type="checkbox" name="options" value="show-fingering" id="show-fingering"><label class="option-label" for="show-fingering">Show fingering</label>
+            <input type="checkbox" name="options" value="show-fingering" id="show-fingering"><label class="option-label" for="show-fingering">Fingering</label>
         </span>
                 
         <p class="string-options">
@@ -227,12 +231,15 @@
             <input type="checkbox" name="six-string" id="six-string" checked>
             <label for="six-string">6</label>
         </p>
+        
         <br>
         
-        <input type="text" id="time" value="10">
-        <label class="label">s</label>
-        <button class='button' id='setTime'>s e t _ t i m e</button>
-        <button class='button' id='stopTime'>s t o p</button>
+        <div class="set-and-stop-time">
+            <input type="text" id="time" value="10">
+            <label class="label">s</label>
+            <button class='button' id='setTime'>s e t _ t i m e</button>
+            <button class='button' id='stopTime'>s t o p</button>
+        </div>
     </div>
     
     <div class="about">
@@ -240,6 +247,18 @@
     </div>
     
     <audio class="beep-sound" src="media/noise.wav"></audio>
+    <audio id="C-sound" src="media/C-sound.wav"></audio>
+    <audio id="Db-sound" src="media/Db-sound.wav"></audio>
+    <audio id="D-sound" src="media/D-sound.wav"></audio>
+    <audio id="Eb-sound" src="media/Eb-sound.wav"></audio>
+    <audio id="E-sound" src="media/E-sound.wav"></audio>
+    <audio id="F-sound" src="media/F-sound.wav"></audio>
+    <audio id="Gb-sound" src="media/Gb-sound.wav"></audio>
+    <audio id="G-sound" src="media/G-sound.wav"></audio>
+    <audio id="Ab-sound" src="media/Ab-sound.wav"></audio>
+    <audio id="A-sound" src="media/A-sound.wav"></audio>
+    <audio id="Bb-sound" src="media/Bb-sound.wav"></audio>
+    <audio id="B-sound" src="media/B-sound.wav"></audio>
     
 </div>
 </body>
