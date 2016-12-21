@@ -13,7 +13,6 @@ var currentIndexString = 0;
 var totalDivString = $(".string").length;
 //hide non-currently-indexed string circles
 $(".string:not(:eq("+ currentIndexString +"))").hide();
-$('#dummy-string').hide();
 
 //use for chord circle
 var currentIndexChord = 0;
