@@ -120,8 +120,8 @@ $('#stopTime').click(function(){ clearInterval(timer); });
 $('#about-text').click(function(){ $('.pop-up').fadeIn(100); });
 
 //if the red X is clicked, pop up closes
-$('#red-x').click(function(){ $('.pop-up').hide();
-                              $('.pop-up-2').hide();});
+$('#red-x').click(function(){ $('.pop-up').hide(); });
+$('#red-x-2').click(function(){ $('.pop-up-2').hide(); });
 
 $('#more-info').click(function(){ 
     $('.pop-up').hide();
