@@ -12,15 +12,6 @@ body, html{
     margin-top: 0px;
 }
 
-.box{
-    margin: 0 auto;
-    border-radius: 100%;
-    font-family: 'Space Mono', monospace, Helvetica;
-    font-size: 4em;
-    text-align: center;
-    height: 100vh;
-}
-
 .clearfix:after {
     visibility: hidden;
     display: block;
