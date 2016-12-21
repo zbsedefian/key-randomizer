@@ -13,7 +13,7 @@ var currentIndexString = 0;
 var totalDivString = $(".string").length;
 //hide non-currently-indexed string circles
 $(".string:not(:eq("+ currentIndexString +"))").hide();
-//$('#first').hide();
+$('#dummy-string').hide();
 
 //use for chord circle
 var currentIndexChord = 0;
@@ -38,6 +38,7 @@ var waitingTime;
 
 //when set time is clicked, starts interval
 $('#setTime').click(function(){
+    $(".string-main #dummy-string").remove();
     whichStrings();
     clearInterval(timer);
 //convert s to ms
@@ -96,12 +97,14 @@ $('input:checkbox').change(
 
 //showing various circles
         if ($('#show-string').is(':checked')) {
+            $("#dummy-string").fadeIn(500);
             $(".string-main").fadeIn(500);
             $(".string").eq(currentIndexString).fadeIn(500);
             $('.string-options').fadeIn(500);
         } else {
             $(".string-main").fadeOut(700);
             $('.string-options').fadeOut(700);
+            $("#dummy-string").fadeOut(700);
         }
 
         if($('#show-chord').is(":checked")){
@@ -162,7 +165,7 @@ function whichStrings(){
             $('.string-main').append($first);
             calculateStringValues();
         } else if ($('#one-string').is(':not(:checked)')) {
-            $('#first').remove();
+            $('.string-main #first').remove();
             calculateStringValues();
         }
 
@@ -170,7 +173,7 @@ function whichStrings(){
             $('.string-main').append($second);
             calculateStringValues();
         } else if($('#two-string').is(':not(:checked)')){
-            $('#second').remove();
+            $('.string-main #second').remove();
             calculateStringValues();
         }
 
@@ -178,7 +181,7 @@ function whichStrings(){
             $('.string-main').append($third);
             calculateStringValues();
         } else if($('#three-string').is(':not(:checked)')){
-            $('#third').remove();
+            $('.string-main #third').remove();
             calculateStringValues();
         }
 
@@ -186,7 +189,7 @@ function whichStrings(){
             $('.string-main').append($fourth);
             calculateStringValues();
         } else if($('#four-string').is(':not(:checked)')){
-            $('#fourth').remove();
+            $('.string-main #fourth').remove();
             calculateStringValues();
         }
 
@@ -194,7 +197,7 @@ function whichStrings(){
             $('.string-main').append($fifth);
             calculateStringValues();
         } else if($('#five-string').is(':not(:checked)')){
-            $('#fifth').remove();
+            $('.string-main #fifth').remove();
             calculateStringValues();
         }
 
@@ -202,7 +205,7 @@ function whichStrings(){
             $('.string-main').append($sixth);
             calculateStringValues();
         } else if($('#six-string').is(':not(:checked)')){
-            $('#sixth').remove();
+            $('.string-main #sixth').remove();
             calculateStringValues();
         }
     } 
