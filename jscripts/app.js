@@ -1,3 +1,7 @@
+///
+/// THIS IS gh-pages
+///
+
 //use for key circle
 var currentIndexKey = 0;
 var totalDivKey = $(".key").length;
