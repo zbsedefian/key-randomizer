@@ -11,24 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/mystyles.css">
-<!--    favicon stuff   -->
-    <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
-    <link rel="manifest" href="favicon.ico/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" type="image/ico" sizes="16x16" href="media/favicon.ico">
 </head>
 <body>
 <div class='container'>
@@ -42,63 +25,68 @@
         
     <div class='pop-up'>
         <div class='red-x' id="red-x"><span class="the-x">X</span></div>
-        <p class='about-paragraph top-p head-p'>
-            Welcome.
-        </p>
         
-        <p class='about-paragraph'>
-            Familiarizing oneself with an instrument's note placement is important for any musician. This program allows the user to test their knowledge of the guitar fretboard. 
-        </p>
+        <div class="inner-pop-up">
         
-        <p class='about-paragraph'>
-            The user is prompted with a random note that will generate at the set interval. To increase recognition difficulty one can add string number, chord/arpeggio, and fingering. 
-        </p>
+            <p class='about-paragraph'>
+                <span class="underline">Musical Keygen 0.0</span>
+
+                <span class="fake-link" id="more-info">
+                   More info
+                </span>
+            </p>
+
+            <p class='about-paragraph'>
+                Familiarizing oneself with an instrument's note placement is important for any musician. This program allows the user to test their knowledge of the guitar fretboard. 
+            </p>
+
+            <p class='about-paragraph'>
+                The user is prompted with a random note that will generate at the set interval. To increase recognition difficulty one can add string number, chord/arpeggio, and fingering. 
+            </p>
+
+            <p class='about-paragraph'>
+                This tool can be used for any instrument or genre, but I built it to test myself on jazz guitar arpeggios.
+            </p>
+
+            <p class='about-paragraph'>
+                Contact me with comments or requests at <a href="mailto:me@zacharysedefian.com" >me@zacharysedefian.com</a>.
+            </p>
+            
+        </div>
         
-        <p class='about-paragraph'>
-            This tool can be used for any instrument or genre, but I built it to test myself on jazz guitar arpeggios.
-        </p>
-        
-        <p class='about-paragraph'>
-            Contact me with comments or requests at <a href="mailto:me@zacharysedefian.com" >me@zacharysedefian.com</a>.
-        </p>
-<!--        <div class="center"><button class='button' id='okay'>Okay.</button></div>-->
     </div>
         
-    <!--    STRING NUMBER -->
+     <div class='pop-up-2'>
+        <div class='red-x' id="red-x"><span class="the-x">X</span></div>
+        
+         <p class='about-paragraph'>            
+           <span class="underline">Key:</span> 
+            
+            <span class="fake-link" id="back">
+               Back
+            </span>
+        </p>
+         
+         
+        
+         <p class='about-paragraph'>
+            <span class="pinkish">Beep</span> - will beep on interval.<br>
+            <span class="pinkish">Play key</span> - midi piano will play the key displayed.<br>
+            <span class="pinkish">(wait)</span> - will wait (s - 1) seconds before playing midi key.<br>
+            <span class="pinkish">String</span> - will indicate the string you must play it on (6=E 5=A 4=D 3=G 2=B 1=E)<br>
+            <span class="pinkish">Fingering</span> - relevant to arpeggios; e.g. for Cmaj7, 2-1-1 means play C and E on the 6th string, G on the 5th, and B on the 4th.<br>
+            <span class="pinkish">Chord</span> (or, arpeggio) - maj7, min7, etc.
+         </p>
+
+    </div>
+        
+<!--    STRING NUMBER -->
         
         <div class="string-main">
             
-<!--
-            <h3 class="main-label string-label clearfix hide"></h3>
-        
-            <div id="first" class="string">
-            <p class="string-name">1</p>
-            </div>
-            
-            <div id="second" class="string">
-            <p class="string-name">2</p>
-            </div>
-
-            <div id="third" class="string">
-            <p class="string-name">3</p>
-            </div>
-
-            <div id="fourth" class="string">
-            <p class="string-name">4</p>
-            </div>
-
-            <div id="fifth" class="string">
-            <p class="string-name">5</p>
-            </div>
-
-            <div id="sixth" class="string">
-            <p class="string-name">6</p>
-            </div>
-            
--->
         </div>
 
-    <!--    KEY   -->
+<!--    KEY   -->
         
         <div class="key-main clearfix">
             
@@ -155,8 +143,6 @@
 <!--        CHORD   -->
         <div class="chord-main">
 
-            <h3 class="main-label chord-label clearfix hide"></h3>
-
             <div id="maj7" class="chord">
             <p class="chord-name">maj7</p>
             </div>
@@ -182,8 +168,6 @@
 <!--    FINGERING    -->
         <div class="fingering-main">
 
-            <h3 class="main-label fingering-label clearfix hide"></h3>
-
             <div id="211" class="fingering">
             <p class="fingering-name">2-1-1</p>
             </div>
@@ -206,14 +190,16 @@
             <input type="checkbox" name="options" value="beep" id="beep"><label class="option-label" id="beep" for="beep">Beep</label>
         
             <input type="checkbox" name="options" value="play-key" id="play-key"><label class="option-label" id="play-key-label" for="play-key">Play key</label>
+            
+            <input type="checkbox" name="options" value="wait-for-time-button" id="wait-for-time-button"><label class="option-label" id="wait-for-time-button-label" for="wait-for-time-button">(wait)</label>
         </span>
             
         <span class="setting-span">
             <input type="checkbox" name="options" value="show-string" id="show-string"><label class="option-label" id="label-show-string" for="show-string">String</label>
             
-            <input type="checkbox" name="options" value="show-chord" id="show-chord"><label class="option-label" for="show-chord">Chord</label>
-          
             <input type="checkbox" name="options" value="show-fingering" id="show-fingering"><label class="option-label" for="show-fingering">Fingering</label>
+            
+            <input type="checkbox" name="options" value="show-chord" id="show-chord"><label class="option-label" for="show-chord">Chord</label>
         </span>
                 
         <p class="string-options">

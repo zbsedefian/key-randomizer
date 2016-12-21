@@ -25,9 +25,13 @@ var totalDivFingering = $(".fingering").length;
 $(".fingering:not(:eq("+ currentIndexFingering +"))").hide();
 $('#211').hide();
 
-//use to convert ms to s
+//creates a variable for the timer so it can be cleared / reset
 var timer;
+
+//use to convert ms to s
 var time; 
+//use for Wait option
+var waitingTime;
 
 //when set time is clicked, starts interval
 $('#setTime').click(function(){
@@ -35,6 +39,7 @@ $('#setTime').click(function(){
     clearInterval(timer);
 //convert s to ms
     time = $('#time').val() * 1000;
+    waitingTime = time - 1 * 1000;
 //short message on set time click
     $('.buttons').append("<p class='message'>Interval has been set to " + time / 1000 + " seconds.</p>");
     $('.message').fadeOut(2000);
@@ -44,10 +49,15 @@ $('#setTime').click(function(){
         currentIndexKey = (currentIndexKey + Math.floor(Math.random() * 12)) % totalDivKey;
         $(".key").hide();
         $(".key").eq(currentIndexKey).show();
-        console.log(currentIndexKey);
         
         if($('#play-key').is(":checked")) {
-            playKey();
+            if($('#wait-for-time-button').is(":checked")){
+                setTimeout(function () {
+                    playKey();
+                }, waitingTime);
+            } else if ($('#wait-for-time-button').is(':not(:checked)')) {
+                playKey(); 
+            }
         }
         
         if($('#beep').is(":checked")) {
@@ -61,14 +71,12 @@ $('#setTime').click(function(){
         }
         
         if($('#show-chord').is(":checked")){
-    //        $('.chord-label').show();
             currentIndexChord = (currentIndexChord + Math.floor(Math.random() * 12)) % totalDivChord;
             $(".chord").hide();
             $(".chord").eq(currentIndexChord).show();
         }
         
         if($('#show-fingering').is(":checked")){
-    //        $('.fingering-label').show();
             currentIndexFingering = (currentIndexFingering + Math.floor(Math.random() * 12)) % totalDivFingering;
             $(".fingering").hide();
             $(".fingering").eq(currentIndexFingering).show();
@@ -83,7 +91,6 @@ $('input:checkbox').change(
 //showing various circles
         if ($('#show-string').is(':checked')) {
             $(".string-main").fadeIn(500);
-            $('.string-label').fadeIn(500);
             $(".string").eq(currentIndexString).fadeIn(500);
             $('.string-options').fadeIn(500);
         } else {
@@ -93,7 +100,6 @@ $('input:checkbox').change(
 
         if($('#show-chord').is(":checked")){
             $(".chord-main").fadeIn(500);
-            $('.chord-label').fadeIn(500);
             $(".chord").eq(currentIndexChord).show();
         } else {
             $(".chord-main").fadeOut(700);
@@ -101,7 +107,6 @@ $('input:checkbox').change(
         
         if ($('#show-fingering').is(':checked')) {
             $(".fingering-main").fadeIn(500);
-            $('.fingering-label').fadeIn(500);
             $(".fingering").eq(currentIndexFingering).fadeIn(500);
         } else {
             $(".fingering-main").fadeOut(700);
@@ -112,11 +117,21 @@ $('input:checkbox').change(
 $('#stopTime').click(function(){ clearInterval(timer); });
 
 //if What is this? is clicked
-//$('#about-text').click(function(){$('.about-message').show()});
 $('#about-text').click(function(){ $('.pop-up').fadeIn(100); });
 
-//if the red X is clicked
-$('#red-x').click(function(){ $('.pop-up').hide(); });
+//if the red X is clicked, pop up closes
+$('#red-x').click(function(){ $('.pop-up').hide();
+                              $('.pop-up-2').hide();});
+
+$('#more-info').click(function(){ 
+    $('.pop-up').hide();
+    $('.pop-up-2').show();
+});
+
+$('#back').click(function(){ 
+    $('.pop-up-2').hide();
+    $('.pop-up').show();
+});
 
 //use in whichString to determine which of the strings should be shown
 var $first = '<div id="first" class="string"><p class="string-name">1</p></div>'

@@ -29,15 +29,6 @@ body, html{
     flex-direction: row;
 }
 
-.main-label{
-    text-align: center;
-    font-size: 16px;
-}
-
-.hide{
-    display: none;
-}
-
 .string-main{
     position: absolute;
 }
@@ -77,15 +68,11 @@ body, html{
     font-size: 13px;
 }
 
-.top-p{
-    font-weight: 800;
-}
-
 .center{
     text-align: center;
 }
 
-.pop-up{
+.pop-up, .pop-up-2{
     display: none;
     margin: auto;
     position: absolute;
@@ -98,10 +85,6 @@ body, html{
     border: solid 2px #555;
     border-top: solid 10px;
     border-radius: 1%;
-/*
-    border-bottom-right-radius: 5%;
-    border-bottom-left-radius: 5%;
-*/
 }
 
 .red-x{
@@ -118,6 +101,26 @@ body, html{
 .the-x{
     margin-left: 5px;
     font-size: 16px;
+}
+
+.fake-link{
+    float: right;
+    margin-top: -6px;
+    background-color: #f598e8;
+    padding: 4px;
+    border: solid 1px black; 
+}
+
+#back{
+    background-color: #0098e8;
+}
+
+.pinkish{
+    color: #f598e8;
+}
+
+.underline{
+    text-decoration: underline;
 }
 
 /***********************/
