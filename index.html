@@ -2,70 +2,252 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+    <meta name="keywords" content="music, keygen, random key, key, guitar practice, performance practice, instrument practice, notes, random note, jazz practice, jazz guitar">
+    <meta name="description" content="A tool for learning the notes of an instrument.">
     <meta name="author" content="Zachary Sedefian">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Guitar Practice</title>
+    <title>Musicial Keygen</title>
     <link rel='shortcut icon' type='image/x-icon' href='media/favicon.ico' />
     <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/mystyles.css">
+    <link rel="icon" type="image/ico" sizes="16x16" href="media/favicon.ico">
 </head>
 <body>
 <div class='container'>
 
+    <header class="header">
+    <h1>Musical Keygen</h1>
+    <h3>Practice every key in the circle of fifths</h3>
+    </header>
     
-<div id="box1" class="box">
-<h1>C</h1>
+    <div class="main">
+        
+    <div class='pop-up'>
+        <div class='red-x' id="red-x"><span class="the-x">X</span></div>
+        
+        <div class="inner-pop-up">
+        
+            <p class='about-paragraph'>
+                <span class="underline">Musical Keygen 0.0</span>
+
+                <span class="fake-link" id="more-info">
+                   More info
+                </span>
+            </p>
+
+            <p class='about-paragraph'>
+                Familiarizing oneself with an instrument's note placement is important for any musician. This program allows the user to test their knowledge of the guitar fretboard. 
+            </p>
+
+            <p class='about-paragraph'>
+                The user is prompted with a random note that will generate at the set interval. To increase recognition difficulty one can add string number, chord/arpeggio, and fingering. 
+            </p>
+
+            <p class='about-paragraph'>
+                This tool can be used for any instrument or genre, but I built it to test myself on jazz guitar arpeggios.
+            </p>
+
+            <p class='about-paragraph'>
+                Contact me with comments or requests at <a href="mailto:me@zacharysedefian.com" >me@zacharysedefian.com</a>.
+            </p>
+            
+        </div>
+        
+    </div>
+        
+     <div class='pop-up-2'>
+        <div class='red-x' id="red-x-2"><span class="the-x">X</span></div>
+        
+         <p class='about-paragraph'>            
+           <span class="underline">Key:</span> 
+            
+            <span class="fake-link" id="back">
+               Back
+            </span>
+        </p>
+         
+         
+        
+         <p class='about-paragraph'>
+            <span class="pinkish">Beep</span> - will beep on interval.<br>
+            <span class="pinkish">Play key</span> - midi piano will play the key displayed.<br>
+            <span class="pinkish">(wait)</span> - will wait (s - 1) seconds before playing midi key.<br>
+            <span class="pinkish">String</span> - will indicate the string you must play it on (6=E 5=A 4=D 3=G 2=B 1=E)<br>
+            <span class="pinkish">Fingering</span> - relevant to arpeggios; e.g. for Cmaj7, 2-1-1 means play C and E on the 6th string, G on the 5th, and B on the 4th.<br>
+            <span class="pinkish">Chord</span> (or, arpeggio) - maj7, min7, etc.
+         </p>
+
+    </div>
+        
+<!--    STRING NUMBER -->
+        
+        <div class="string-main">
+            
+        </div>
+
+<!--    KEY   -->
+        
+        <div class="key-main clearfix">
+            
+            <div id="C" class="key">
+            <p class="key-name">C</p>
+            </div>
+
+            <div id="F" class="key">
+            <p class="key-name">F</p>
+            </div>
+
+            <div id="Bb" class="key">
+            <p class="key-name">Bb</p>
+            </div>
+
+            <div id="Eb" class="key">
+            <p class="key-name">Eb</p>
+            </div>
+
+            <div id="Ab" class="key">
+            <p class="key-name">Ab</p>
+            </div>
+
+            <div id="Db" class="key">
+            <p class="key-name">Db/C#</p>
+            </div>
+
+            <div id="Gb" class="key">
+            <p class="key-name">Gb/F#</p>
+            </div>
+
+            <div id="B" class="key">
+            <p class="key-name">B/Cb</p>
+            </div>
+
+            <div id="E" class="key">
+            <p class="key-name">E</p>
+            </div>
+
+            <div id="A" class="key">
+            <p class="key-name">A</p>
+            </div>
+
+            <div id="D" class="key">
+            <p class="key-name">D</p>
+            </div>
+
+            <div id="G" class="key">
+            <p class="key-name">G</p>
+            </div>
+            
+        </div>
+        
+<!--        CHORD   -->
+        <div class="chord-main">
+
+            <div id="maj7" class="chord">
+            <p class="chord-name">maj7</p>
+            </div>
+
+            <div id="dom7" class="chord">
+            <p class="chord-name">dom7</p>
+            </div>
+
+            <div id="min7" class="chord">
+            <p class="chord-name">min7</p>
+            </div>
+
+            <div id="min7b5" class="chord">
+            <p class="chord-name">min7b5</p>
+            </div>
+
+            <div id="dim7" class="chord">
+            <p class="chord-name">dim7</p>
+            </div>
+            
+        </div>
+        
+<!--    FINGERING    -->
+        <div class="fingering-main">
+
+            <div id="211" class="fingering">
+            <p class="fingering-name">2-1-1</p>
+            </div>
+
+            <div id="121" class="fingering">
+            <p class="fingering-name">1-2-1</p>
+            </div>
+            
+            <div id="112" class="fingering">
+            <p class="fingering-name">1-1-2</p>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <div class="settings">
+        
+        <span class="setting-span" id='blockify'>
+            <input type="checkbox" name="options" value="beep" id="beep"><label class="option-label" id="beep" for="beep">Beep</label>
+        
+            <input type="checkbox" name="options" value="play-key" id="play-key"><label class="option-label" id="play-key-label" for="play-key">Play key</label>
+            
+            <input type="checkbox" name="options" value="wait-for-time-button" id="wait-for-time-button"><label class="option-label" id="wait-for-time-button-label" for="wait-for-time-button">(wait)</label>
+        </span>
+            
+        <span class="setting-span">
+            <input type="checkbox" name="options" value="show-string" id="show-string"><label class="option-label" id="label-show-string" for="show-string">String</label>
+            
+            <input type="checkbox" name="options" value="show-fingering" id="show-fingering"><label class="option-label" for="show-fingering">Fingering</label>
+            
+            <input type="checkbox" name="options" value="show-chord" id="show-chord"><label class="option-label" for="show-chord">Chord</label>
+        </span>
+                
+        <p class="string-options">
+            Which strings do you want to practice?<br>
+            <input type="checkbox" name="one-string" id="one-string" checked>
+            <label for="one-string">1</label>
+            <input type="checkbox" name="two-string" id="two-string" checked>
+            <label for="two-string">2</label>
+            <input type="checkbox" name="three-string" id="three-string" checked>
+            <label for="three-string">3</label>
+            <input type="checkbox" name="four-string" id="four-string" checked>
+            <label for="four-string">4</label>
+            <input type="checkbox" name="five-string" id="five-string" checked>
+            <label for="five-string">5</label>
+            <input type="checkbox" name="six-string" id="six-string" checked>
+            <label for="six-string">6</label>
+        </p>
+        
+        <br>
+        
+        <div class="set-and-stop-time">
+            <input type="text" id="time" value="10">
+            <label class="label">s</label>
+            <button class='button' id='setTime'>s e t _ t i m e</button>
+            <button class='button' id='stopTime'>s t o p</button>
+        </div>
+    </div>
+    
+    <div class="about">
+        <p id="about-text">What is this?</p>
+    </div>
+    
+    <audio class="beep-sound" src="media/noise.wav"></audio>
+    <audio id="C-sound" src="media/C-sound.wav"></audio>
+    <audio id="Db-sound" src="media/Db-sound.wav"></audio>
+    <audio id="D-sound" src="media/D-sound.wav"></audio>
+    <audio id="Eb-sound" src="media/Eb-sound.wav"></audio>
+    <audio id="E-sound" src="media/E-sound.wav"></audio>
+    <audio id="F-sound" src="media/F-sound.wav"></audio>
+    <audio id="Gb-sound" src="media/Gb-sound.wav"></audio>
+    <audio id="G-sound" src="media/G-sound.wav"></audio>
+    <audio id="Ab-sound" src="media/Ab-sound.wav"></audio>
+    <audio id="A-sound" src="media/A-sound.wav"></audio>
+    <audio id="Bb-sound" src="media/Bb-sound.wav"></audio>
+    <audio id="B-sound" src="media/B-sound.wav"></audio>
+    
 </div>
-    
-<div id="box2" class="box">
-<h1>F</h1>
-</div>
-    
-<div id="box3" class="box">
-<h1>Bb</h1>
-</div>
-    
-<div id="box4" class="box">
-<h1>Eb</h1>
-</div>
-    
-<div id="box5" class="box">
-<h1>Ab</h1>
-</div>
-    
-<div id="box6" class="box">
-<h1>Db/C#</h1>
-</div>
-    
-<div id="box7" class="box">
-<h1>Gb/F#</h1>
-</div>
-    
-<div id="box8" class="box">
-<h1>Cb/B</h1>
-</div>
-    
-<div id="box9" class="box">
-<h1>E</h1>
-</div>
-    
-<div id="box10" class="box">
-<h1>A</h1>
-</div>
-    
-<div id="box11" class="box">
-<h1>D</h1>
-</div>
-    
-<div id="box7" class="box">
-<h1>G</h1>
-</div>
-    
-<label class="label">Input time in ms:</label><input type="text" id="time" value="6000">
-<button id='setTime'>Set new time</button>
-    
+>>>>>>> gh-pages
 </body>
 <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
