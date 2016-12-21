@@ -31,7 +31,6 @@ $('#211').hide();
 
 //creates a variable for the timer so it can be cleared / reset
 var timer;
-
 //use to convert ms to s
 var time; 
 //use for Wait option
@@ -48,45 +47,48 @@ $('#setTime').click(function(){
     $('.buttons').append("<p class='message'>Interval has been set to " + time / 1000 + " seconds.</p>");
     $('.message').fadeOut(2000);
 //setting interval for all
-    timer = setInterval(function(){
-//key alternator
-        currentIndexKey = (currentIndexKey + Math.floor(Math.random() * 12)) % totalDivKey;
-        $(".key").hide();
-        $(".key").eq(currentIndexKey).show();
-        
-        if($('#play-key').is(":checked")) {
-            if($('#wait-for-time-button').is(":checked")){
-                setTimeout(function () {
-                    playKey();
-                }, waitingTime);
-            } else if ($('#wait-for-time-button').is(':not(:checked)')) {
-                playKey(); 
-            }
-        }
-        
-        if($('#beep').is(":checked")) {
-            $(".beep-sound")[0].play();
-        }
-        
-        if($('#show-string').is(":checked")){
-            currentIndexString = (currentIndexString + Math.floor(Math.random() * 12)) % totalDivString;
-            $(".string").hide();
-            $(".string").eq(currentIndexString).show();
-        }
-        
-        if($('#show-chord').is(":checked")){
-            currentIndexChord = (currentIndexChord + Math.floor(Math.random() * 12)) % totalDivChord;
-            $(".chord").hide();
-            $(".chord").eq(currentIndexChord).show();
-        }
-        
-        if($('#show-fingering').is(":checked")){
-            currentIndexFingering = (currentIndexFingering + Math.floor(Math.random() * 12)) % totalDivFingering;
-            $(".fingering").hide();
-            $(".fingering").eq(currentIndexFingering).show();
-        }
-    },time);
+    alternator();
+    timer = setInterval(function(){alternator();},time);
 });
+
+function alternator(){
+    //key alternator
+    currentIndexKey = (currentIndexKey + Math.floor(Math.random() * 12)) % totalDivKey;
+    $(".key").hide();
+    $(".key").eq(currentIndexKey).show();
+
+    if($('#play-key').is(":checked")) {
+        if($('#wait-for-time-button').is(":checked")){
+            setTimeout(function () {
+                playKey();
+            }, waitingTime);
+        } else if ($('#wait-for-time-button').is(':not(:checked)')) {
+            playKey(); 
+        }
+    }
+
+    if($('#beep').is(":checked")) {
+        $(".beep-sound")[0].play();
+    }
+
+    if($('#show-string').is(":checked")){
+        currentIndexString = (currentIndexString + Math.floor(Math.random() * 12)) % totalDivString;
+        $(".string").hide();
+        $(".string").eq(currentIndexString).show();
+    }
+
+    if($('#show-chord').is(":checked")){
+        currentIndexChord = (currentIndexChord + Math.floor(Math.random() * 12)) % totalDivChord;
+        $(".chord").hide();
+        $(".chord").eq(currentIndexChord).show();
+    }
+
+    if($('#show-fingering').is(":checked")){
+        currentIndexFingering = (currentIndexFingering + Math.floor(Math.random() * 12)) % totalDivFingering;
+        $(".fingering").hide();
+        $(".fingering").eq(currentIndexFingering).show();
+    }
+}
 
 //listen for checkbox clicking
 $('input:checkbox').change(
@@ -153,53 +155,57 @@ function calculateStringValues(){
 
 //chooses which guitar strings to show
 function whichStrings(){
-    if ($('#one-string').is(':checked') && $('#first').length === 0 ){
-        $('.string-main').append($first);
-        calculateStringValues();
-    } else if ($('#one-string').is(':not(:checked)')) {
-        $('#first').remove();
-        calculateStringValues();
-    }
+    
+    if($('#show-string').is(':checked')){
+        
+        if ($('#one-string').is(':checked') && $('#first').length === 0 ){
+            $('.string-main').append($first);
+            calculateStringValues();
+        } else if ($('#one-string').is(':not(:checked)')) {
+            $('#first').remove();
+            calculateStringValues();
+        }
 
-    if ($('#two-string').is(':checked') && $('#second').length === 0 ){
-        $('.string-main').append($second);
-        calculateStringValues();
-    } else if($('#two-string').is(':not(:checked)')){
-        $('#second').remove();
-        calculateStringValues();
-    }
+        if ($('#two-string').is(':checked') && $('#second').length === 0 ){
+            $('.string-main').append($second);
+            calculateStringValues();
+        } else if($('#two-string').is(':not(:checked)')){
+            $('#second').remove();
+            calculateStringValues();
+        }
 
-    if ($('#three-string').is(':checked') && $('#third').length === 0 ){
-        $('.string-main').append($third);
-        calculateStringValues();
-    } else if($('#three-string').is(':not(:checked)')){
-        $('#third').remove();
-        calculateStringValues();
-    }
+        if ($('#three-string').is(':checked') && $('#third').length === 0 ){
+            $('.string-main').append($third);
+            calculateStringValues();
+        } else if($('#three-string').is(':not(:checked)')){
+            $('#third').remove();
+            calculateStringValues();
+        }
 
-     if ($('#four-string').is(':checked') && $('#fourth').length === 0 ){
-        $('.string-main').append($fourth);
-        calculateStringValues();
-    } else if($('#four-string').is(':not(:checked)')){
-        $('#fourth').remove();
-        calculateStringValues();
-    }
+         if ($('#four-string').is(':checked') && $('#fourth').length === 0 ){
+            $('.string-main').append($fourth);
+            calculateStringValues();
+        } else if($('#four-string').is(':not(:checked)')){
+            $('#fourth').remove();
+            calculateStringValues();
+        }
 
-    if ($('#five-string').is(':checked') && $('#fifth').length === 0 ){
-        $('.string-main').append($fifth);
-        calculateStringValues();
-    } else if($('#five-string').is(':not(:checked)')){
-        $('#fifth').remove();
-        calculateStringValues();
-    }
+        if ($('#five-string').is(':checked') && $('#fifth').length === 0 ){
+            $('.string-main').append($fifth);
+            calculateStringValues();
+        } else if($('#five-string').is(':not(:checked)')){
+            $('#fifth').remove();
+            calculateStringValues();
+        }
 
-    if ($('#six-string').is(':checked') && $('#sixth').length === 0 ){
-        $('.string-main').append($sixth);
-        calculateStringValues();
-    } else if($('#six-string').is(':not(:checked)')){
-        $('#sixth').remove();
-        calculateStringValues();
-    }
+        if ($('#six-string').is(':checked') && $('#sixth').length === 0 ){
+            $('.string-main').append($sixth);
+            calculateStringValues();
+        } else if($('#six-string').is(':not(:checked)')){
+            $('#sixth').remove();
+            calculateStringValues();
+        }
+    } 
 }
 
 //chooses which sound to play when Play Key is checked
